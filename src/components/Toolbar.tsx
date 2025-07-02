@@ -11,7 +11,7 @@ import ArrowSplit from "../icons/Arrow Split.svg";
 const Toolbar = () => {
   return (
     <>
-      <div className="flex items-center justify-between h-[48px] w-full px-2 py-1.5 border-b border-gray-200">
+      <div className="flex items-center justify-between h-[48px] w-full px-2 py-1.5 ">
         <div className="flex items-center gap-2">
           <div className="flex items-center">
             <button className="text-sm p-2 flex place-items-end gap-1 cursor-pointer">
