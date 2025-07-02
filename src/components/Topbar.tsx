@@ -9,12 +9,23 @@ const Topbar = () => {
     <>
       <div className="w-full h-[48px] border flex items-center justify-between border-gray-200 py-2 px-4">
         <div className=" flex items-center  gap-4">
-          <div className="flex items-center gap-2">
+          <button className="flex items-center cursor-pointer">
             <img src={panel} alt="" width={24} height={24} />
-          </div>
-          <div className="flex items-center ">
-            <div className="">
-              <span className="mr-1 text-[14px]">Workspace</span>
+          </button>
+          <div className="flex items-center gap-1">
+            <button className=" flex items-center gap-1 text-[14px] cursor-pointer">
+              Workspace
+              <img
+                src={Chevron}
+                alt="chevron"
+                className="inline-block "
+                width={12}
+                height={12}
+              />
+            </button>
+
+            <button className="flex items-center gap-1 text-[14px] cursor-pointer">
+              Folder 2
               <img
                 src={Chevron}
                 alt="chevron"
@@ -22,19 +33,10 @@ const Topbar = () => {
                 width={12}
                 height={12}
               />
-            </div>
-            <div>
-              <span className="mr-1 ml-1 text-[14px]">Folder 2</span>
-              <img
-                src={Chevron}
-                alt="chevron"
-                className="inline-block"
-                width={12}
-                height={12}
-              />
-            </div>
-            <div>
-              <span className="mr-2 ml-1 text-[14px]">Spreadsheet 3</span>
+            </button>
+
+            <button className=" flex items-center gap-2 text-[14px] cursor-pointer">
+              Spreadsheet 3
               <img
                 src={Shape}
                 alt="arrow"
@@ -42,7 +44,7 @@ const Topbar = () => {
                 width={12}
                 height={12}
               />
-            </div>
+            </button>
           </div>
         </div>
         <div className="flex items-center gap-1 ">
@@ -60,7 +62,7 @@ const Topbar = () => {
               className="bg-transparent outline-none w-full text-[12px] placeholder:text-gray-500 box-border "
             />
           </div>
-          <div >
+          <div>
             <img src={notification} alt="notification" width={40} height={40} />
           </div>
           <div className="flex items-center ">
