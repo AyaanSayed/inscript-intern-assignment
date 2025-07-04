@@ -19,7 +19,7 @@ import globe from "../icons/Globe.svg";
 import dropdown from "../icons/Dropdown.svg";
 import emoji from "../icons/Emoji.svg";
 import circle from "../icons/Chevron Circle.svg";
-import rupee from "../icons/Rupee.svg";
+import rupee from "../icons/rupee.svg";
 
 type Person = {
   serial: number;
