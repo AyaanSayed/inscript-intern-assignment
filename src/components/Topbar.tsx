@@ -1,7 +1,7 @@
 import panel from "../icons/Panel.svg";
 import Chevron from "../icons/Chevron.svg";
 import Shape from "../icons/Shape.svg";
-import Search2 from "../icons/Search2.svg";
+import Search2 from "../icons/search2.svg";
 import notification from "../icons/Notification_bell.svg";
 import profile from "../icons/Ellipse 1.svg";
 const Topbar = () => {
