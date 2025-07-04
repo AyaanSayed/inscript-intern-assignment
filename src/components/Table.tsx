@@ -438,20 +438,18 @@ const createEmptyRow = (serial: number): Person => ({
 // Generate data with empty rows
 const generateDataWithEmptyRows = (
   filledData: Person[],
-  totalRows: number
+  totalRows: number,
 ): Person[] => {
   const emptyRowsNeeded = totalRows - filledData.length;
   const emptyRows = Array.from({ length: emptyRowsNeeded }, (_, index) =>
-    createEmptyRow(filledData.length + index + 1)
+    createEmptyRow(filledData.length + index + 1),
   );
 
   return [...filledData, ...emptyRows];
 };
 
 function Table() {
-  const [data, _setData] = useState(() =>
-    generateDataWithEmptyRows(defaultData, 50)
-  );
+  const data = useState(() => generateDataWithEmptyRows(defaultData, 50))[0];
 
   const table = useReactTable({
     data,
@@ -520,7 +518,7 @@ function Table() {
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
-                            header.getContext()
+                            header.getContext(),
                           )}
                     </div>
                   </th>
@@ -540,11 +538,11 @@ function Table() {
                     cell.column.id === "serial-number"
                       ? "text-center"
                       : cell.column.id === "priority" ||
-                        cell.column.id === "dueDate" ||
-                        cell.column.id === "estValue" ||
-                        cell.column.id === "submitted"
-                      ? "text-right px-2"
-                      : "text-left px-2"
+                          cell.column.id === "dueDate" ||
+                          cell.column.id === "estValue" ||
+                          cell.column.id === "submitted"
+                        ? "text-right px-2"
+                        : "text-left px-2"
                   }`}
                   style={{
                     width: `${cell.column.getSize()}px`,
