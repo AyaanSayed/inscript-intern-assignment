@@ -4,7 +4,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { useReducer, useState, type ReactElement } from "react";
+import { useState, type ReactElement } from "react";
 import link from "../icons/Link.svg";
 import arrowSync from "../icons/Arrow Sync.svg";
 import arrowSplit from "../icons/Arrow Split (1).svg";
@@ -160,7 +160,6 @@ const defaultData: Person[] = [
 const columnHelper = createColumnHelper<Person>();
 
 const columns = [
-  // Standalone: URL column with empty header
   columnHelper.accessor("serial", {
     id: "serial-number",
     header: () => {
@@ -172,8 +171,9 @@ const columns = [
     },
     cell: (info) => info.getValue(),
     enableResizing: true,
+    size: 32,
   }),
-  // Group 1: Q3 Financial Overview
+
   columnHelper.group({
     id: "financialOverview",
     header: () => {
@@ -271,7 +271,6 @@ const columns = [
     ],
   }),
 
-  // Standalone: URL column with empty header
   columnHelper.accessor("url", {
     id: "url",
     header: () => {
@@ -292,7 +291,6 @@ const columns = [
     size: 125,
   }),
 
-  // Group 2: ABC
   columnHelper.group({
     id: "abcGroup",
     header: () => {
@@ -306,7 +304,7 @@ const columns = [
             className="text-gray-800"
           />
           <div className="text-[14px] font-medium ">ABC</div>
-          <img src={shape} alt="" height={16} width={16} className="m-1"/>
+          <img src={shape} alt="" height={16} width={16} className="m-1" />
         </div>
       );
     },
@@ -328,7 +326,6 @@ const columns = [
     ],
   }),
 
-  // Group 3: Answer a question
   columnHelper.group({
     id: "answerQuestionGroup",
     header: () => {
@@ -366,7 +363,6 @@ const columns = [
     ],
   }),
 
-  // Group 4: Extract
   columnHelper.group({
     id: "extractGroup",
     header: () => {
@@ -395,7 +391,9 @@ const columns = [
               <span>{value}</span>
               <img src={rupee} alt="rupee" width={7} height={16} />
             </div>
-          ) : "";
+          ) : (
+            ""
+          );
         },
         enableResizing: true,
         size: 125,
@@ -403,8 +401,6 @@ const columns = [
     ],
   }),
 
-  // Simulated "+" Group using standalone dummy column
-  // Group 5: "+" button
   columnHelper.group({
     id: "plusGroup",
     header: () => {
@@ -426,7 +422,6 @@ const columns = [
   }),
 ];
 
-// Function to create empty row
 const createEmptyRow = (serial: number): Person => ({
   serial,
   jobRequest: "",
@@ -456,8 +451,7 @@ const generateDataWithEmptyRows = (
 function Table() {
   const [data, _setData] = useState(() =>
     generateDataWithEmptyRows(defaultData, 50)
-  ); // 50 total rows
-  const rerender = useReducer(() => ({}), {})[1];
+  );
 
   const table = useReactTable({
     data,
@@ -495,8 +489,6 @@ function Table() {
   };
 
   const getHeaderColor = (headerId: string): string => {
-    // Debug: log the header ID to see what React Table is generating
-    console.log("Header ID:", headerId);
     return headerColorMap[headerId] || "bg-gray-50 text-gray-700";
   };
 
@@ -513,7 +505,8 @@ function Table() {
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
-                const baseStyles = "border h-[32px] text-left border-border-gray";
+                const baseStyles =
+                  "border h-[32px] text-left border-border-gray";
                 const customColor = getHeaderColor(header.id);
 
                 return (
@@ -559,18 +552,23 @@ function Table() {
               {row.getVisibleCells().map((cell) => (
                 <td
                   key={cell.id}
-                  className={`border px-2 h-[32px] border-border-gray text-[12px] ${
-                  cell.column.id === "serial-number" ? "text-center" :
-                  cell.column.id === "priority" || cell.column.id === "dueDate" || cell.column.id === "estValue" || cell.column.id === "submitted" ? "text-right" :
-                  "text-left"
+                  className={`border h-[32px] border-border-gray text-[12px]  hover:shadow-[inset_0_0_0_1px_#6C8B70] hover:drop-shadow-green-200 hover:drop-shadow-xs ${
+                    cell.column.id === "serial-number"
+                      ? "text-center"
+                      : cell.column.id === "priority" ||
+                        cell.column.id === "dueDate" ||
+                        cell.column.id === "estValue" ||
+                        cell.column.id === "submitted"
+                      ? "text-right px-2"
+                      : "text-left px-2"
                   }`}
                   style={{
-                  width: `${cell.column.getSize()}px`,
-                  maxWidth: `${cell.column.getSize()}px`,
-                  minWidth: `${cell.column.getSize()}px`,
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  whiteSpace: "nowrap",
+                    width: `${cell.column.getSize()}px`,
+                    maxWidth: `${cell.column.getSize()}px`,
+                    minWidth: `${cell.column.getSize()}px`,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

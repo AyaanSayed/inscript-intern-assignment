@@ -30,6 +30,9 @@
   --color-medium-text: #C29210;
   --color-high-text: #EF4D44;
   --color-low-text: #1A8CFF;
+  --color-all-orders-text: #3E5741;
+  --color-all-orders-bg: #E8F0E9;
+  --color-all-orders-border: #4B6A4F;
 }
 
 @layer base {

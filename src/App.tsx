@@ -1,4 +1,4 @@
-import Sidebar from "./components/Sidebar"
+import BottomBar from "./components/BottomBar"
 import Table from "./components/Table"
 import Toolbar from "./components/Toolbar"
 import Topbar from "./components/Topbar"
@@ -9,6 +9,7 @@ function App() {
         <Topbar />
         <Toolbar />
         <Table />
+        <BottomBar />
     </>
   )
 }

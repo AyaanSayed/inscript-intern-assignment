@@ -6,14 +6,19 @@ import notification from "../icons/Notification_bell.svg";
 import profile from "../icons/Ellipse 1.svg";
 const Topbar = () => {
   return (
-      <div className="">
-          <div className="h-[48px] border-b flex items-center justify-between border-border-gray py-2 px-4">
+    <div className="">
+      <div className="h-[48px] border-b flex items-center justify-between border-border-gray py-2 px-4">
         <div className=" flex items-center  gap-4 flex-shrink-0">
           <button className="flex items-center cursor-pointer">
             <img src={panel} alt="" width={24} height={24} />
           </button>
           <div className="flex items-center gap-1">
-            <button className=" flex items-center gap-1 text-[14px] cursor-pointer font-medium text-topbar-gray">
+            <button
+              className=" flex items-center gap-1 text-[14px] cursor-pointer font-medium text-topbar-gray"
+              onClick={() => {
+                console.log("Workspace clicked");
+              }}
+            >
               Workspace
               <img
                 src={Chevron}
@@ -24,7 +29,12 @@ const Topbar = () => {
               />
             </button>
 
-            <button className="flex items-center gap-1 text-[14px] cursor-pointer font-medium text-topbar-gray">
+            <button
+              className="flex items-center gap-1 text-[14px] cursor-pointer font-medium text-topbar-gray"
+              onClick={() => {
+                console.log("Folder clicked");
+              }}
+            >
               Folder 2
               <img
                 src={Chevron}
@@ -35,7 +45,12 @@ const Topbar = () => {
               />
             </button>
 
-            <button className=" flex items-center gap-2 text-[14px] cursor-pointer font-medium">
+            <button
+              className=" flex items-center gap-2 text-[14px] cursor-pointer font-medium"
+              onClick={() => {
+                console.log("Spreadsheet 3 clicked");
+              }}
+            >
               Spreadsheet 3
               <img
                 src={Shape}
@@ -63,7 +78,19 @@ const Topbar = () => {
             />
           </div>
           <div>
-            <img src={notification} alt="notification" width={40} height={40} />
+            <button
+              onClick={() => {
+                console.log("Notification clicked");
+              }}
+              className="flex items-center cursor-pointer"
+            >
+              <img
+                src={notification}
+                alt="notification"
+                width={40}
+                height={40}
+              />
+            </button>
           </div>
           <div className="flex items-center ">
             <div className="py-1.5 pl-2 pr-3 flex items-center gap-2">
@@ -78,9 +105,8 @@ const Topbar = () => {
           </div>
         </div>
       </div>
-      </div>
-  )
-
-}
+    </div>
+  );
+};
 
 export default Topbar;
