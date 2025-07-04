@@ -513,25 +513,9 @@ function Table() {
                   <th
                     key={header.id}
                     colSpan={header.colSpan}
-                    className={`${baseStyles} ${customColor}`}
-                    style={{
-                      width: `${header.getSize()}px`,
-                      maxWidth: `${header.getSize()}px`,
-                      minWidth: `${header.getSize()}px`,
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      whiteSpace: "nowrap",
-                    }}
+                    className={`${baseStyles} ${customColor} overflow-hidden text-ellipsis whitespace-nowrap w-[${header.getSize()}px] max-w-[${header.getSize()}px] min-w-[${header.getSize()}px]`}
                   >
-                    <div
-                      className="overflow-hidden text-ellipsis whitespace-nowrap"
-                      style={{
-                        maxWidth: "100%",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
+                    <div className="overflow-hidden text-ellipsis whitespace-nowrap max-w-full">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -552,7 +536,7 @@ function Table() {
               {row.getVisibleCells().map((cell) => (
                 <td
                   key={cell.id}
-                  className={`border h-[32px] border-border-gray text-[12px]  hover:shadow-[inset_0_0_0_1px_#6C8B70] hover:drop-shadow-green-200 hover:drop-shadow-xs ${
+                  className={`border h-[32px] border-border-gray text-[12px]  hover:shadow-[inset_0_0_0_1px_#6C8B70] hover:drop-shadow-green-200 hover:drop-shadow-xs w-[${cell.column.getSize()}px] min-w-[${cell.column.getSize()}px] max-w-[${cell.column.getSize()}px] overflow-hidden text-ellipsis whitespace-nowrap ${
                     cell.column.id === "serial-number"
                       ? "text-center"
                       : cell.column.id === "priority" ||
@@ -566,9 +550,6 @@ function Table() {
                     width: `${cell.column.getSize()}px`,
                     maxWidth: `${cell.column.getSize()}px`,
                     minWidth: `${cell.column.getSize()}px`,
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    whiteSpace: "nowrap",
                   }}
                 >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

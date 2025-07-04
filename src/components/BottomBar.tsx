@@ -36,9 +36,12 @@ const BottomBar = () => {
         >
           Arrived
         </button>
-        <button className="px-2 py-3" onClick={() => {
-          console.log("Add new order button clicked");
-        }}>
+        <button
+          className="px-2 py-3"
+          onClick={() => {
+            console.log("Add new order button clicked");
+          }}
+        >
           <img src={plus} alt="add" width={16} height={16} />
         </button>
       </div>
