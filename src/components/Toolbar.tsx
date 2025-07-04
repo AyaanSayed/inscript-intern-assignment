@@ -10,9 +10,9 @@ import ArrowSplit from "../icons/Arrow Split.svg";
 
 const Toolbar = () => {
   return (
-    <>
-      <div className="flex items-center justify-between h-[48px] w-full px-2 py-1.5 ">
-        <div className="flex items-center gap-2">
+      <div className="">
+        <div className="flex items-center justify-between h-[48px]  px-2 py-1.5 flex-shrink-0">
+        <div className="flex items-center gap-2 flex-shrink-0">
           <div className="flex items-center">
             <button className="text-sm p-2 flex place-items-end gap-1 cursor-pointer">
               Tool bar
@@ -45,16 +45,16 @@ const Toolbar = () => {
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <button className="flex items-center py-[7px] pl-2 pr-3 border border-gray-200 rounded-md text-sm gap-1 box-border cursor-pointer">
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <button className="flex items-center py-[7px] pl-2 pr-3 border border-border-gray rounded-md text-sm gap-1 box-border cursor-pointer">
             <img src={ArrowDownload} alt="" height={20} width={20} />
             Import
           </button>
-          <button className="flex items-center py-[7px] pl-2 pr-3 border border-gray-200 rounded-md text-sm gap-1 box-border cursor-pointer">
+          <button className="flex items-center py-[7px] pl-2 pr-3 border border-border-gray rounded-md text-sm gap-1 box-border cursor-pointer">
             <img src={ArrowUpload} alt="" height={20} width={20} />
             Export
           </button>
-          <button className="flex items-center py-[7px] pl-2 pr-3 border border-gray-200 rounded-md text-sm gap-1 box-border cursor-pointer">
+          <button className="flex items-center py-[7px] pl-2 pr-3 border border-border-gray rounded-md text-sm gap-1 box-border cursor-pointer">
             <img src={Share} alt="" height={20} width={20} />
             Share
           </button>
@@ -64,7 +64,7 @@ const Toolbar = () => {
           </button>
         </div>
       </div>
-    </>
+      </div>
   );
 };
 

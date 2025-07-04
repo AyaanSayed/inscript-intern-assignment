@@ -1,14 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-midnight: #121063;
-  --color-tahiti: #3ab7bf;
-  --color-bermuda: #78dcca;
-  --color-abc-green: #D2E0D4;
+  --color-abc-bg: #D2E0D4;
   --color-abc-text: #505450;
   --color-ans-text: #463E59;
   --color-ans-bg: #DCCFFC;
   --color-extract-text: #695149;
   --color-extract-bg: #FAC2AF;
+  --color-gray-text: #757575;
+  --color-assigned-text: #666C66;
+  --color-assigned-bg: #E8F0E9;
+  --color-priority-text: #655C80;
+  --color-priority-bg: #EAE3FC;
+  --color-dueDate-text: #655C80;
+  --color-dueDate-bg: #EAE3FC;
+  --color-estValue-text: #8C6C62;
+  --color-estValue-bg: #FFE9E0;
+  --color-border-gray: #EEEEEE;
+  --color-topbar-gray: #AFAFAF;
+  --color-need-to-start-bg: #E2E8F0;
+  --color-need-to-start-text: #475569;
+  --color-in-progress-bg: #FFF3D6;
+  --color-in-progress-text: #85640B;
+  --color-completed-bg: #D3F2E3;
+  --color-completed-text: #0A6E3D;
+  --color-blocked-bg: #FFE1DE;
+  --color-blocked-text: #C22219;
+  --color-medium-text: #C29210;
+  --color-high-text: #EF4D44;
+  --color-low-text: #1A8CFF;
+}
 
+@layer base {
+  body {
+    font-family: 'Work Sans';
+  }
 }

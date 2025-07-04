@@ -6,14 +6,14 @@ import notification from "../icons/Notification_bell.svg";
 import profile from "../icons/Ellipse 1.svg";
 const Topbar = () => {
   return (
-    <>
-      <div className="w-full h-[48px] border flex items-center justify-between border-gray-200 py-2 px-4">
-        <div className=" flex items-center  gap-4">
+      <div className="">
+          <div className="h-[48px] border-b flex items-center justify-between border-border-gray py-2 px-4">
+        <div className=" flex items-center  gap-4 flex-shrink-0">
           <button className="flex items-center cursor-pointer">
             <img src={panel} alt="" width={24} height={24} />
           </button>
           <div className="flex items-center gap-1">
-            <button className=" flex items-center gap-1 text-[14px] cursor-pointer">
+            <button className=" flex items-center gap-1 text-[14px] cursor-pointer font-medium text-topbar-gray">
               Workspace
               <img
                 src={Chevron}
@@ -24,7 +24,7 @@ const Topbar = () => {
               />
             </button>
 
-            <button className="flex items-center gap-1 text-[14px] cursor-pointer">
+            <button className="flex items-center gap-1 text-[14px] cursor-pointer font-medium text-topbar-gray">
               Folder 2
               <img
                 src={Chevron}
@@ -35,7 +35,7 @@ const Topbar = () => {
               />
             </button>
 
-            <button className=" flex items-center gap-2 text-[14px] cursor-pointer">
+            <button className=" flex items-center gap-2 text-[14px] cursor-pointer font-medium">
               Spreadsheet 3
               <img
                 src={Shape}
@@ -47,8 +47,8 @@ const Topbar = () => {
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-1 ">
-          <div className="flex items-center gap-2 bg-gray-200 h-[35px] w-[165px] py-3 pl-3 rounded-md">
+        <div className="flex items-center gap-1 flex-shrink-0">
+          <div className="flex items-center gap-2 bg-gray-100 h-[35px] w-[165px] py-3 pl-3 rounded-md">
             <img
               src={Search2}
               alt="search"
@@ -72,14 +72,15 @@ const Topbar = () => {
               </div>
               <div className="flex flex-col">
                 <div className="text-[12px] leading-2">John Doe</div>
-                <div className="text-[10px]">john.doe...</div>
+                <div className="text-[10px] text-gray-400">john.doe...</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
-  );
-};
+      </div>
+  )
+
+}
 
 export default Topbar;
